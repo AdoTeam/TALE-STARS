@@ -14,14 +14,14 @@
     font-family:Arial, sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#f5f5f5;
     color:#111;
     transition:0.3s;
-}
-
-html{
-    scroll-behavior:smooth;
 }
 
 /* NAVBAR */
@@ -96,6 +96,11 @@ nav ul li a{
     cursor:pointer;
     background:black;
     color:white;
+    transition:0.3s;
+}
+
+.btn:hover{
+    opacity:0.85;
 }
 
 .hero-image{
@@ -105,7 +110,7 @@ nav ul li a{
     background:url('https://picsum.photos/900/500') center/cover;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
     padding:70px 60px;
@@ -292,30 +297,47 @@ body.gray nav ul li a{
 
 <body class="white">
 
+<!-- NAVBAR -->
+
 <nav>
 
 <div class="logo">MarketUI</div>
 
 <ul>
+
 <li><a href="#">Home</a></li>
+
 <li><a href="#featured">Products</a></li>
+
 <li><a href="#all-products">All Products</a></li>
+
 <li><a href="#info">Info</a></li>
 
 <li>
+
 <div class="theme-box">
+
 <select onchange="changeTheme(this.value)">
+
 <option value="white">White</option>
+
 <option value="turquoise">Turquoise</option>
+
 <option value="dark">Black</option>
+
 <option value="gray">Black Gray</option>
+
 </select>
+
 </div>
+
 </li>
 
 </ul>
 
 </nav>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -325,7 +347,7 @@ body.gray nav ul li a{
 
 <p>
 Discover premium products with stylish shopping experience.
-Fast delivery, modern UI and secure payment.
+Fast delivery, secure payment and modern UI.
 </p>
 
 <button class="btn">Shop Now</button>
@@ -336,6 +358,8 @@ Fast delivery, modern UI and secure payment.
 
 </section>
 
+<!-- FEATURED -->
+
 <section id="featured">
 
 <div class="section-title">Featured Products</div>
@@ -343,43 +367,79 @@ Fast delivery, modern UI and secure payment.
 <div class="grid">
 
 <a class="product-link" href="#"
-onclick="openProduct('123','$19.99','Modern random product.','https://picsum.photos/500?1')">
+onclick="openProduct(
+'123',
+'$19.99',
+'Modern random product.',
+'https://picsum.photos/500?1',
+'CODE123',
+'https://google.com'
+)">
 
 <div class="card">
+
 <img src="https://picsum.photos/500?1">
 
 <div class="card-content">
+
 <h3>123</h3>
+
 <div class="price">$19.99</div>
+
 </div>
+
 </div>
 
 </a>
 
 <a class="product-link" href="#"
-onclick="openProduct('456','$29.99','Modern random product.','https://picsum.photos/500?2')">
+onclick="openProduct(
+'456',
+'$29.99',
+'Modern random product.',
+'https://picsum.photos/500?2',
+'SALE456',
+'https://youtube.com'
+)">
 
 <div class="card">
+
 <img src="https://picsum.photos/500?2">
 
 <div class="card-content">
+
 <h3>456</h3>
+
 <div class="price">$29.99</div>
+
 </div>
+
 </div>
 
 </a>
 
 <a class="product-link" href="#"
-onclick="openProduct('789','$39.99','Modern random product.','https://picsum.photos/500?3')">
+onclick="openProduct(
+'789',
+'$39.99',
+'Modern random product.',
+'https://picsum.photos/500?3',
+'FREE789',
+'https://github.com'
+)">
 
 <div class="card">
+
 <img src="https://picsum.photos/500?3">
 
 <div class="card-content">
+
 <h3>789</h3>
+
 <div class="price">$39.99</div>
+
 </div>
+
 </div>
 
 </a>
@@ -387,6 +447,8 @@ onclick="openProduct('789','$39.99','Modern random product.','https://picsum.pho
 </div>
 
 </section>
+
+<!-- ALL PRODUCTS -->
 
 <section id="all-products">
 
@@ -395,96 +457,186 @@ onclick="openProduct('789','$39.99','Modern random product.','https://picsum.pho
 <div class="grid">
 
 <a class="product-link" href="#"
-onclick="openProduct('111','$12.99','Modern random product.','https://picsum.photos/500?11')">
+onclick="openProduct(
+'111',
+'$12.99',
+'Modern random product.',
+'https://picsum.photos/500?11',
+'CODE111',
+'https://google.com'
+)">
+
 <div class="card">
 <img src="https://picsum.photos/500?11">
+
 <div class="card-content">
 <h3>111</h3>
 <div class="price">$12.99</div>
 </div>
+
 </div>
+
 </a>
 
 <a class="product-link" href="#"
-onclick="openProduct('222','$22.99','Modern random product.','https://picsum.photos/500?12')">
+onclick="openProduct(
+'222',
+'$22.99',
+'Modern random product.',
+'https://picsum.photos/500?12',
+'SALE222',
+'https://youtube.com'
+)">
+
 <div class="card">
 <img src="https://picsum.photos/500?12">
+
 <div class="card-content">
 <h3>222</h3>
 <div class="price">$22.99</div>
 </div>
+
 </div>
+
 </a>
 
 <a class="product-link" href="#"
-onclick="openProduct('333','$33.99','Modern random product.','https://picsum.photos/500?13')">
+onclick="openProduct(
+'333',
+'$33.99',
+'Modern random product.',
+'https://picsum.photos/500?13',
+'DISCOUNT333',
+'https://github.com'
+)">
+
 <div class="card">
 <img src="https://picsum.photos/500?13">
+
 <div class="card-content">
 <h3>333</h3>
 <div class="price">$33.99</div>
 </div>
+
 </div>
+
 </a>
 
 <a class="product-link" href="#"
-onclick="openProduct('444','$44.99','Modern random product.','https://picsum.photos/500?14')">
+onclick="openProduct(
+'444',
+'$44.99',
+'Modern random product.',
+'https://picsum.photos/500?14',
+'FREE444',
+'https://openai.com'
+)">
+
 <div class="card">
 <img src="https://picsum.photos/500?14">
+
 <div class="card-content">
 <h3>444</h3>
 <div class="price">$44.99</div>
 </div>
+
 </div>
+
 </a>
 
 <a class="product-link" href="#"
-onclick="openProduct('555','$55.99','Modern random product.','https://picsum.photos/500?15')">
+onclick="openProduct(
+'555',
+'$55.99',
+'Modern random product.',
+'https://picsum.photos/500?15',
+'VIP555',
+'https://facebook.com'
+)">
+
 <div class="card">
 <img src="https://picsum.photos/500?15">
+
 <div class="card-content">
 <h3>555</h3>
 <div class="price">$55.99</div>
 </div>
+
 </div>
+
 </a>
 
 <a class="product-link" href="#"
-onclick="openProduct('666','$66.99','Modern random product.','https://picsum.photos/500?16')">
+onclick="openProduct(
+'666',
+'$66.99',
+'Modern random product.',
+'https://picsum.photos/500?16',
+'SHOP666',
+'https://twitter.com'
+)">
+
 <div class="card">
 <img src="https://picsum.photos/500?16">
+
 <div class="card-content">
 <h3>666</h3>
 <div class="price">$66.99</div>
 </div>
+
 </div>
+
 </a>
 
 <a class="product-link" href="#"
-onclick="openProduct('777','$77.99','Modern random product.','https://picsum.photos/500?17')">
+onclick="openProduct(
+'777',
+'$77.99',
+'Modern random product.',
+'https://picsum.photos/500?17',
+'HELLO777',
+'https://amazon.com'
+)">
+
 <div class="card">
 <img src="https://picsum.photos/500?17">
+
 <div class="card-content">
 <h3>777</h3>
 <div class="price">$77.99</div>
 </div>
+
 </div>
+
 </a>
 
 <a class="product-link" href="#"
-onclick="openProduct('888','$88.99','Modern random product.','https://picsum.photos/500?18')">
+onclick="openProduct(
+'888',
+'$88.99',
+'Modern random product.',
+'https://picsum.photos/500?18',
+'MEGA888',
+'https://netflix.com'
+)">
+
 <div class="card">
 <img src="https://picsum.photos/500?18">
+
 <div class="card-content">
 <h3>888</h3>
 <div class="price">$88.99</div>
 </div>
+
 </div>
+
 </a>
 
 </div>
 
 </section>
+
+<!-- INFO -->
 
 <section id="info">
 
@@ -507,13 +659,86 @@ Modern shopping platform with stylish interface and fast experience.
 ✔ Modern UI Design
 </p>
 
+<br><br>
+
+<h3>Kod Açıklamaları</h3>
+
+<br>
+
+<p>
+
+<b>Navbar:</b> Üst menü alanıdır. Menüleri değiştirmek için
+<code>&lt;nav&gt;</code> bölümünü düzenle.
+
+<br><br>
+
+<b>Hero:</b> Ana giriş alanıdır.
+<code>.hero</code> kısmından değişir.
+
+<br><br>
+
+<b>Grid:</b> Ürünlerin dizildiği sistemdir.
+<code>.grid</code> CSS kısmından ayarlanır.
+
+<br><br>
+
+<b>Card:</b> Ürün kutularıdır.
+<code>.card</code> alanından renk, shadow, hover değişir.
+
+<br><br>
+
+<b>Tema Sistemi:</b>
+<code>body.dark</code>,
+<code>body.gray</code>,
+<code>body.white</code>,
+<code>body.turquoise</code>
+
+alanlarından düzenlenir.
+
+<br><br>
+
+<b>Ürün Ekleme:</b>
+
+Her ürün şu sistemle eklenir:
+
+</p>
+
+<pre>
+openProduct(
+'Ürün Adı',
+'Fiyat',
+'Açıklama',
+'Resim',
+'Kopya Kod',
+'Yönlenecek Site'
+)
+</pre>
+
+<p>
+
+<b>Kopyalama Sistemi:</b>
+
+Copy butonu ürünün kendi kodunu kopyalar.
+
+<br><br>
+
+<b>Buy Now:</b>
+
+Her ürün kendi sitesine yeni sekmede gider.
+
+</p>
+
 </div>
 
 </section>
 
+<!-- FOOTER -->
+
 <footer>
 © 2026 MarketUI • All Rights Reserved
 </footer>
+
+<!-- MODAL -->
 
 <div class="modal" id="productModal">
 
@@ -533,13 +758,11 @@ Modern shopping platform with stylish interface and fast experience.
 
 <div class="button-group">
 
-<button class="btn"
-onclick="window.location.href='https://google.com'">
+<button class="btn" onclick="buyNow()">
 Buy Now
 </button>
 
-<button class="btn copy-btn"
-onclick="copyCode()">
+<button class="btn copy-btn" onclick="copyCode()">
 Copy
 </button>
 
@@ -553,51 +776,71 @@ Copy
 
 <script>
 
+let currentCopy = "";
+let currentLink = "";
+
 function changeTheme(theme){
 
-document.body.className="";
+    document.body.className = "";
 
-document.body.classList.add(theme);
+    document.body.classList.add(theme);
 
 }
 
-function openProduct(title,price,desc,img){
+function openProduct(
+    title,
+    price,
+    desc,
+    img,
+    copyText,
+    redirectLink
+){
 
-document.getElementById("productModal").style.display="flex";
+    document.getElementById("productModal").style.display = "flex";
 
-document.getElementById("modalTitle").innerText=title;
+    document.getElementById("modalTitle").innerText = title;
 
-document.getElementById("modalPrice").innerText=price;
+    document.getElementById("modalPrice").innerText = price;
 
-document.getElementById("modalDesc").innerText=desc;
+    document.getElementById("modalDesc").innerText = desc;
 
-document.getElementById("modalImg").src=img;
+    document.getElementById("modalImg").src = img;
+
+    currentCopy = copyText;
+
+    currentLink = redirectLink;
 
 }
 
 function closeModal(){
 
-document.getElementById("productModal").style.display="none";
+    document.getElementById("productModal").style.display = "none";
 
 }
 
 function copyCode(){
 
-navigator.clipboard.writeText("123");
+    navigator.clipboard.writeText(currentCopy);
 
-alert("123 copied!");
+    alert(currentCopy + " copied!");
+
+}
+
+function buyNow(){
+
+    window.open(currentLink, "_blank");
 
 }
 
-window.onclick=function(e){
+window.onclick = function(e){
 
-let modal=document.getElementById("productModal");
+    let modal = document.getElementById("productModal");
 
-if(e.target==modal){
+    if(e.target == modal){
 
-modal.style.display="none";
+        modal.style.display = "none";
 
-}
+    }
 
 }
 
