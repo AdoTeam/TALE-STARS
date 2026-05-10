@@ -6,232 +6,607 @@
 <title>MarketUI</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
 
-    body {
-        background: #f6f6f6;
-        color: #222;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-    /* NAVBAR */
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 18px 60px;
-        background: white;
-        position: sticky;
-        top: 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
+body{
+    background:#f5f5f5;
+    color:#222;
+}
 
-    nav h1 {
-        font-size: 20px;
-    }
+/* NAVBAR */
 
-    nav ul {
-        display: flex;
-        gap: 25px;
-        list-style: none;
-        color: #555;
-    }
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
 
-    nav ul li {
-        cursor: pointer;
-    }
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
 
-    /* HERO */
-    .hero {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 80px 60px;
-        background: white;
-    }
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
 
-    .hero-text {
-        max-width: 500px;
-    }
+nav ul li a{
+    text-decoration:none;
+    color:#444;
+    font-weight:600;
+    transition:.3s;
+}
 
-    .hero-text h2 {
-        font-size: 44px;
-        margin-bottom: 15px;
-    }
+nav ul li a:hover{
+    color:black;
+}
 
-    .hero-text p {
-        color: #666;
-        margin-bottom: 20px;
-        line-height: 1.5;
-    }
+/* HERO */
 
-    .btn {
-        padding: 12px 20px;
-        background: black;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-    }
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:90px 60px;
+    background:white;
+}
 
-    .hero-box {
-        width: 350px;
-        height: 250px;
-        background: #eaeaea;
-        border-radius: 12px;
-    }
+.hero-text{
+    max-width:550px;
+}
 
-    /* FEATURED */
-    .featured {
-        padding: 60px;
-    }
+.hero-text h1{
+    font-size:52px;
+    margin-bottom:20px;
+}
 
-    .section-title {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
+.hero-text p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:25px;
+}
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-    }
+.btn{
+    padding:14px 22px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
 
-    .card {
-        background: white;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        transition: 0.3s;
-    }
+.btn:hover{
+    opacity:.85;
+}
 
-    .card:hover {
-        transform: translateY(-5px);
-    }
+.hero-image{
+    width:420px;
+    height:280px;
+    border-radius:16px;
+    background:url('https://images.unsplash.com/photo-1607082349566-187342175e2f?q=80&w=1200&auto=format&fit=crop') center/cover;
+}
 
-    .img {
-        width: 100%;
-        height: 140px;
-        background: #ddd;
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
+/* SECTION */
 
-    .price {
-        color: green;
-        margin-top: 5px;
-        font-weight: bold;
-    }
+section{
+    padding:70px 60px;
+}
 
-    /* ABOUT */
-    .about {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 60px;
-        background: white;
-    }
+.section-title{
+    font-size:30px;
+    margin-bottom:30px;
+}
 
-    .about-box {
-        width: 300px;
-        height: 200px;
-        background: #eaeaea;
-        border-radius: 12px;
-    }
+/* GRID */
 
-    .about-text {
-        max-width: 500px;
-    }
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
 
-    .about-text h3 {
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
+/* CARD */
 
-    .about-text p {
-        color: #666;
-        line-height: 1.6;
-    }
+.card{
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+    transition:.3s;
+}
 
-    /* FOOTER */
-    footer {
-        text-align: center;
-        padding: 30px;
-        color: #777;
-        background: white;
-        margin-top: 40px;
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:18px;
+}
+
+.card-content h3{
+    margin-bottom:8px;
+}
+
+.price{
+    color:green;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.product-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ABOUT */
+
+.about{
+    background:white;
+    border-radius:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.about-image{
+    width:350px;
+    height:240px;
+    border-radius:14px;
+    background:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop') center/cover;
+}
+
+.about-text h2{
+    margin-bottom:15px;
+    font-size:34px;
+}
+
+.about-text p{
+    color:#666;
+    line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:40px;
+    background:white;
+    text-align:center;
+    padding:35px;
+    color:#777;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.modal-content{
+    background:white;
+    width:90%;
+    max-width:700px;
+    border-radius:16px;
+    overflow:hidden;
+    animation:popup .3s ease;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(.8);
+        opacity:0;
     }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.modal-content img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.modal-body{
+    padding:25px;
+}
+
+.close{
+    float:right;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.modal-price{
+    color:green;
+    font-size:22px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.info-box{
+    background:white;
+    border-radius:16px;
+    padding:40px;
+    line-height:1.8;
+    color:#555;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
-    <h1>MarketUI</h1>
+    <div class="logo">MarketUI</div>
+
     <ul>
-        <li>Home</li>
-        <li>Products</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#featured">Products</a></li>
+        <li><a href="#all-products">All Products</a></li>
+        <li><a href="#info">Info</a></li>
     </ul>
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
+
     <div class="hero-text">
-        <h2>Modern Market Experience</h2>
-        <p>En yeni ürünleri keşfet, hızlı ve güvenli alışveriş yap. Modern tasarım ile kullanıcı dostu market deneyimi.</p>
+        <h1>Modern Market Experience</h1>
+
+        <p>
+            Discover premium quality products with a modern shopping
+            experience. Fast delivery, secure payment and stylish products.
+        </p>
+
         <button class="btn">Shop Now</button>
     </div>
 
-    <div class="hero-box"></div>
+    <div class="hero-image"></div>
+
 </section>
 
-<!-- FEATURED -->
-<section class="featured">
-    <div class="section-title">Öne Çıkan Ürünler</div>
+<!-- FEATURED PRODUCTS -->
+
+<section id="featured">
+
+    <div class="section-title">Featured Products</div>
 
     <div class="grid">
-        <div class="card">
-            <div class="img"></div>
-            <h3>Ürün 1</h3>
-            <p class="price">$19.99</p>
-        </div>
 
-        <div class="card">
-            <div class="img"></div>
-            <h3>Ürün 2</h3>
-            <p class="price">$29.99</p>
-        </div>
+        <a class="product-link" href="#" onclick="openProduct(
+        'Gaming Headset',
+        '$79.99',
+        'High quality RGB gaming headset with noise cancellation.',
+        'https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1200&auto=format&fit=crop'
+        )">
 
-        <div class="card">
-            <div class="img"></div>
-            <h3>Ürün 3</h3>
-            <p class="price">$39.99</p>
-        </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+                    <h3>Gaming Headset</h3>
+                    <p>Premium Sound Experience</p>
+                    <div class="price">$79.99</div>
+                </div>
+            </div>
+
+        </a>
+
+        <a class="product-link" href="#" onclick="openProduct(
+        'Smart Watch',
+        '$129.99',
+        'Track your fitness and notifications with style.',
+        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop'
+        )">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+                    <h3>Smart Watch</h3>
+                    <p>Elegant & Modern</p>
+                    <div class="price">$129.99</div>
+                </div>
+            </div>
+
+        </a>
+
+        <a class="product-link" href="#" onclick="openProduct(
+        'Wireless Speaker',
+        '$59.99',
+        'Portable speaker with deep bass and long battery life.',
+        'https://images.unsplash.com/photo-1589003077984-894e133dabab?q=80&w=1200&auto=format&fit=crop'
+        )">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1589003077984-894e133dabab?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="card-content">
+                    <h3>Wireless Speaker</h3>
+                    <p>Crystal Clear Audio</p>
+                    <div class="price">$59.99</div>
+                </div>
+            </div>
+
+        </a>
+
     </div>
+
+</section>
+
+<!-- ALL PRODUCTS -->
+
+<section id="all-products">
+
+    <div class="section-title">All Products</div>
+
+    <div class="grid">
+
+        <!-- PRODUCT -->
+
+        <a class="product-link" href="#" onclick="openProduct(
+        'MacBook Air',
+        '$999.99',
+        'Lightweight laptop with powerful performance.',
+        'https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1200&auto=format&fit=crop'
+        )">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>MacBook Air</h3>
+                <div class="price">$999.99</div>
+            </div>
+        </div>
+
+        </a>
+
+        <a class="product-link" href="#" onclick="openProduct(
+        'Nike Sneakers',
+        '$149.99',
+        'Comfortable sneakers for daily lifestyle.',
+        'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop'
+        )">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Nike Sneakers</h3>
+                <div class="price">$149.99</div>
+            </div>
+        </div>
+
+        </a>
+
+        <a class="product-link" href="#" onclick="openProduct(
+        'DSLR Camera',
+        '$749.99',
+        'Professional photography camera.',
+        'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop'
+        )">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>DSLR Camera</h3>
+                <div class="price">$749.99</div>
+            </div>
+        </div>
+
+        </a>
+
+        <a class="product-link" href="#" onclick="openProduct(
+        'Office Chair',
+        '$189.99',
+        'Ergonomic office chair for comfort.',
+        'https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1200&auto=format&fit=crop'
+        )">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Office Chair</h3>
+                <div class="price">$189.99</div>
+            </div>
+        </div>
+
+        </a>
+
+        <a class="product-link" href="#" onclick="openProduct(
+        'Mechanical Keyboard',
+        '$89.99',
+        'RGB mechanical keyboard for gaming.',
+        'https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=1200&auto=format&fit=crop'
+        )">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Mechanical Keyboard</h3>
+                <div class="price">$89.99</div>
+            </div>
+        </div>
+
+        </a>
+
+        <a class="product-link" href="#" onclick="openProduct(
+        'Coffee Maker',
+        '$69.99',
+        'Brew premium coffee every morning.',
+        'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?q=80&w=1200&auto=format&fit=crop'
+        )">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="card-content">
+                <h3>Coffee Maker</h3>
+                <div class="price">$69.99</div>
+            </div>
+        </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- INFO SECTION -->
+
+<section id="info">
+
+    <div class="info-box">
+
+        <h2 style="margin-bottom:20px;">About MarketUI</h2>
+
+        <p>
+            MarketUI is a modern e-commerce interface created for stylish
+            online shopping experiences.
+        </p>
+
+        <br>
+
+        <p>
+            ✔ Fast shopping experience <br>
+            ✔ Secure payment system <br>
+            ✔ Premium quality products <br>
+            ✔ Responsive modern design
+        </p>
+
+    </div>
+
 </section>
 
 <!-- ABOUT -->
-<section class="about">
-    <div class="about-box"></div>
 
-    <div class="about-text">
-        <h3>Biz Kimiz?</h3>
-        <p>
-            Modern alışveriş deneyimi sunan bir platformuz. Amacımız hızlı, güvenli ve kullanıcı dostu bir market deneyimi sağlamaktır.
-        </p>
+<section>
+
+    <div class="about">
+
+        <div class="about-image"></div>
+
+        <div class="about-text">
+
+            <h2>Who Are We?</h2>
+
+            <p>
+                We are a modern online shopping platform focused on delivering
+                high quality products and excellent user experience.
+            </p>
+
+        </div>
+
     </div>
+
 </section>
 
+<!-- FOOTER -->
+
 <footer>
-    © 2026 MarketUI • All rights reserved
+    © 2026 MarketUI • All Rights Reserved
 </footer>
+
+<!-- PRODUCT MODAL -->
+
+<div class="modal" id="productModal">
+
+    <div class="modal-content">
+
+        <div class="modal-body">
+
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <img id="modalImg">
+
+            <h2 id="modalTitle" style="margin-top:20px;"></h2>
+
+            <p id="modalDesc" style="margin-top:10px;color:#666;"></p>
+
+            <div class="modal-price" id="modalPrice"></div>
+
+            <button class="btn" style="margin-top:20px;">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function openProduct(title, price, desc, img){
+
+    document.getElementById("productModal").style.display = "flex";
+
+    document.getElementById("modalTitle").innerText = title;
+
+    document.getElementById("modalPrice").innerText = price;
+
+    document.getElementById("modalDesc").innerText = desc;
+
+    document.getElementById("modalImg").src = img;
+}
+
+function closeModal(){
+    document.getElementById("productModal").style.display = "none";
+}
+
+window.onclick = function(e){
+
+    let modal = document.getElementById("productModal");
+
+    if(e.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+</script>
 
 </body>
 </html>
