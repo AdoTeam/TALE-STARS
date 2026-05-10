@@ -1,117 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tale Stars</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MarketUI</title>
 
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #0a1020, #000000);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    color: white;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
 
-.banner {
-    text-align: center;
-    margin-top: 10px;
-}
+    body {
+        background: #f6f6f6;
+        color: #222;
+    }
 
-.banner img {
-    width: 500px;
-    height: auto;
-}
+    /* NAVBAR */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 60px;
+        background: white;
+        position: sticky;
+        top: 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
 
-.content {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    max-width: 400px;
-}
+    nav h1 {
+        font-size: 20px;
+    }
 
-.content h1 {
-    margin: 0 0 10px 0;
-}
+    nav ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+        color: #555;
+    }
 
-.content p {
-    margin: 0;
-    line-height: 1.5;
-}
+    nav ul li {
+        cursor: pointer;
+    }
 
-.links {
-    margin-top: 10px;
-}
+    /* HERO */
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 80px 60px;
+        background: white;
+    }
 
-.links a {
-    color: #4da6ff;
-    text-decoration: none;
-    margin-right: 10px;
-}
+    .hero-text {
+        max-width: 500px;
+    }
 
-.links a:hover {
-    text-decoration: underline;
-}
+    .hero-text h2 {
+        font-size: 44px;
+        margin-bottom: 15px;
+    }
 
-.get-mod {
-    position: absolute;
-    right: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-}
+    .hero-text p {
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
 
-.get-mod a {
-    background: rgb(255, 187, 0);
-    color: black;
-    padding: 18px 34px;
-    border-radius: 26px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-}
+    .btn {
+        padding: 12px 20px;
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
 
-.get-mod a:hover {
-    opacity: 0.9;
-}
+    .hero-box {
+        width: 350px;
+        height: 250px;
+        background: #eaeaea;
+        border-radius: 12px;
+    }
+
+    /* FEATURED */
+    .featured {
+        padding: 60px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .img {
+        width: 100%;
+        height: 140px;
+        background: #ddd;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        color: green;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+
+    /* ABOUT */
+    .about {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px;
+        background: white;
+    }
+
+    .about-box {
+        width: 300px;
+        height: 200px;
+        background: #eaeaea;
+        border-radius: 12px;
+    }
+
+    .about-text {
+        max-width: 500px;
+    }
+
+    .about-text h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .about-text p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 30px;
+        color: #777;
+        background: white;
+        margin-top: 40px;
+    }
+
 </style>
 </head>
 
 <body>
 
-<div class="banner">
-    <img src="logo.png" alt="TALE-STARS Logo">
-</div>
+<nav>
+    <h1>MarketUI</h1>
+    <ul>
+        <li>Home</li>
+        <li>Products</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+</nav>
 
-<div class="content">
-    <h1>Tale Stars</h1>
-    <p>
-        Tale Stars is a mod developed for Brawl Stars. It has a free test version as well as paid features.
-    </p>
-    <div class="links">
-        <a href="#">Discord</a>
-        <a href="#">Telegram</a>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-text">
+        <h2>Modern Market Experience</h2>
+        <p>En yeni ürünleri keşfet, hızlı ve güvenli alışveriş yap. Modern tasarım ile kullanıcı dostu market deneyimi.</p>
+        <button class="btn">Shop Now</button>
     </div>
-</div>
 
-<div class="get-mod">
-    <a href="BURAYA LINKI KOY">Get Tale Stars</a>
-</div>
+    <div class="hero-box"></div>
+</section>
 
-<video src="video1.mp4" controls loop class="video">video1.mp4</video>
+<!-- FEATURED -->
+<section class="featured">
+    <div class="section-title">Öne Çıkan Ürünler</div>
 
-<style>
-.video {
-  width: 270px;
-  position: absolute;
-  top: 200px;   /* yukarıdan uzaklık */
-  left: 600px;  /* soldan uzaklık */
-}
-</style>
+    <div class="grid">
+        <div class="card">
+            <div class="img"></div>
+            <h3>Ürün 1</h3>
+            <p class="price">$19.99</p>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <h3>Ürün 2</h3>
+            <p class="price">$29.99</p>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <h3>Ürün 3</h3>
+            <p class="price">$39.99</p>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+    <div class="about-box"></div>
+
+    <div class="about-text">
+        <h3>Biz Kimiz?</h3>
+        <p>
+            Modern alışveriş deneyimi sunan bir platformuz. Amacımız hızlı, güvenli ve kullanıcı dostu bir market deneyimi sağlamaktır.
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2026 MarketUI • All rights reserved
+</footer>
 
 </body>
 </html>
